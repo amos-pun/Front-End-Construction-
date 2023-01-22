@@ -1,0 +1,1 @@
+export const API = process.env.REACT_BACKEND_URL
