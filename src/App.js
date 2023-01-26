@@ -4,6 +4,7 @@ import MyRoutes from "./MyRoutes";
 import { combineReducers, createStore } from "redux";
 import GameReducer from "./Components/hooks/reducer/GameReduer";
 import counterReducer from "./Components/hooks/reducer/CounterReducer";
+import './index.css'
 
 function App() {
 

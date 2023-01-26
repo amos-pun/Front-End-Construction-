@@ -18,10 +18,11 @@ const Navbar = () => {
                 </div>
 
                 <div className='col-sm-12 col-lg-4 d-flex justify-content-evenly p-2'>
-                    <Link ><i class="fa-solid fa-credit-card fa-xl icon"></i></Link>
-                    <Link to={'/register'}><i class="fa-solid fa-user-plus fa-xl icon"></i>
+                    <Link to={'/sigin'}><i className="fa-solid fa-credit-card fa-xl icon"></i></Link>
+
+                    <Link to={'/register'}><i className="fa-solid fa-user-plus fa-xl icon"></i>
                     </Link>
-                    <Link><i class="fa-solid fa-address-book fa-xl icon"></i></Link>
+                    <Link to={'/login'}><i className="fa-solid fa-address-book fa-xl icon"></i></Link>
                 </div>
             </div>
         </div>

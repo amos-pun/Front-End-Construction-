@@ -6,9 +6,13 @@ import Datafetch from './Components/hooks/Datafetch'
 import Main from './Components/hooks/reducer/Main'
 import About from './Components/Pages/About'
 import Cart from './Components/Pages/Cart'
+import EmailConfirmation from './Components/Pages/EmailConfirmation'
 import FAQ from './Components/Pages/FAQ'
+import ForgetPassword from './Components/Pages/ForgetPassword'
 import Home from './Components/Pages/Home'
+import Login from './Components/Pages/Login'
 import Register from './Components/Pages/Register'
+import ResetPasword from './Components/Pages/ResetPassword'
 
 const MyRoutes = () => {
   return (
@@ -19,6 +23,14 @@ const MyRoutes = () => {
             <Route path='/faq' element={<FAQ/>}/>
             <Route path='/about' element={<About/>}/>
             <Route path='/register' element={<Register/>}/>
+            <Route path='/login' element={<Login/>}/>
+            
+
+            <Route path='/verifyEmail/:token' element={<EmailConfirmation/>}/>
+
+            
+            <Route path='/resetpassword/:token' element={<ResetPasword/>}/>
+            <Route path='/forgetpassword' element={<ForgetPassword/>}/>
             
 
             <Route path='/counter' element={<Counter/>}/>
