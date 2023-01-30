@@ -2,6 +2,11 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {  authenticate, isAuthenticated, login } from '../../api/userAPi'
 import Navbar from '../Layout/Navbar'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+// import 'react-toastify/dist/ReactToastify.css';
+// import { toast, ToastContainer } from 'react-toastify';
+// toast is not working
 
 const Login = () => {
   let [ email, setEmail] = useState("")
@@ -15,14 +20,16 @@ const Login = () => {
     .then(data=>{
       if(data.error){
         setError(data.error)
-        setSuccess(false)
       }
       else{
         authenticate(data)
         setSuccess(true)
+        toast.success('Welcome')
       } 
     })
   }
+
+  // const notify = () => toast("Wow so easy!");
 
   let navigate = useNavigate()
 
@@ -39,12 +46,15 @@ const Login = () => {
       }
       else{
         navigate('/admin/dashboard')
-    }
+        // toast is not working
+      }
+      // toast.success('welome')
   }}
   
   return (
     <div>
     <Navbar/>
+    <ToastContainer position='top-right'></ToastContainer>
     {showError()}
     {redirect()}
       <div className="text-center">
@@ -52,7 +62,7 @@ const Login = () => {
           <form>
             <img
               className="mb-4"
-              src=".\Image\home-page-logo-03.png"
+              src="..\Image\home-page-logo-03.png"
               alt=".."
               width="72"
               height="57"
@@ -89,6 +99,7 @@ const Login = () => {
             </div>
             <button className="w-50 btn btn-lg btn-primary" 
                 onClick={handleLogin}
+                  // notify()
                 type="submit">
                 Login
             </button>

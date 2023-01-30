@@ -1,6 +1,6 @@
 *{
     margin: 0 !important;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
 }
 
 /* Navbar */
@@ -11,16 +11,21 @@
 .textNav{
     color: yellow;
     text-shadow: 0px 0px 6px green;
+    position: relative;
 
 }
 .company{
-    font-size: 15px ;
+    font-size: 12px !important;
     font-family: 'Josefin Sans', sans-serif;
     text-transform: uppercase;
+    position: absolute;
+    top: 20px;
+    left: 0px;
 }
 .name{
-    font-size: 30px;
+    font-size: 45px !important;
     font-family: 'Seymour One', sans-serif;
+    margin-top: -10px;
 }
 
 .icon{
@@ -29,57 +34,63 @@
     position: relative;
 }
 .icon::after{
-    content: " ";
-    display: block;
+    content: "";
+    /* display: block; */
     background-color: yellow;
-    height: 4px;
+    height: 0px;
     width: 0%;
     transition: .3s;
-    margin-top: 19px;
     position: absolute;
+    top: 20px;
 }
 .icon:hover::after{
-    width: 80%;
+    width: 100%;
 }
 
 /* down home navbar  */
 .wrapper{
-    background-color: #262626;
-    padding: 15px;
+    background-color: #cfdcdf !important;
+    padding: 5px !important;
 }
 
 nav ul{
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-evenly !important;
     list-style-type: none;
     text-transform: uppercase;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 20px;
+    font-size: 14px !important;
+    margin-bottom: 5px !important;
 }
 
 .dwnNav{
     text-decoration: none;
-    padding: 8px;
     position: relative;
-
+    text-align: center;
+    width: 150px !important;
+    color: rgb(51, 50, 28) !important;
+    font-weight: bold;
 }
 .dwnNav:hover{
-    color: white;
+    color: black !important;
     transition: 0.3s;
 }
+/* .user_nav{
+    display: grid;
+    place-content: center;
+} */
 
 .dwnNav:after{
-    content: ".";
+    content: "";
     position: absolute;
     left: 50%;
-    bottom: 0;
+    bottom: 0px;
     transform: translateX(-50%) scaleX(0);
     transform-origin: 50% 50%;
     width: 100%;
     height: 2px;
     transition: .5s;
-    background-color: #82CAAF;
+    background-color: #000000 !important;
 }
 
 .dwnNav:hover:after{
@@ -101,4 +112,28 @@ nav ul{
 .imgHover:hover{
     transform: scale(1.2);
     border: 1px solid black;
+}
+
+/*  -- Admin Dashboard -- */
+.admin_dash{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-shadow: 0px 2px 3px white, 0px 0px 2px yellow;
+}
+
+.nav li:hover{
+    background-color: white;
+    /* font-weight: bold; */
+    transform: scaleX(1.1);
+    transition: 0.1s;
+}
+.active_item{
+    background-color: white !important;
+    color: #000000 !important;
+    /* font-weight: bold; */
+    transform: scaleX(1.1) !important;
+    margin: 0px 10px !important;
+    transition: 0.1s;
+}
+.admin_board{
+    background-color: #82CAAF;
 }

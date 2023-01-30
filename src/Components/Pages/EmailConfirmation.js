@@ -1,4 +1,3 @@
-import { Alert } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { emailConfirmation } from '../../api/userAPi'

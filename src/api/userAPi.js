@@ -73,3 +73,10 @@ export const authenticate = (data) => {
 export const isAuthenticated = () => {
     return localStorage.getItem('jwt') ? JSON.parse(localStorage.getItem('jwt')) : false
 }
+
+// to signout 
+export const signout = () => {
+    return fetch(`${API}/signout`)
+    .then(res => res.json())
+    .catch(err =>console.log(err))
+}
