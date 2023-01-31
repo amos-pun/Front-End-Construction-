@@ -10,7 +10,7 @@ const AdminPaage = () => {
         <div className='container-fluid'>
             <div className='row'>
                 <div className='col-lg-3'>
-                    <Admin order />
+                    <Admin />
                 </div>
 
                 <div className='col-lg-9'>

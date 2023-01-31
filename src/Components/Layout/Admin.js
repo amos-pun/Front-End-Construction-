@@ -29,12 +29,12 @@ const Admin = ({ category, product, users, order }) => {
           <ul className="nav nav-pills flex-column mb-auto">
             <li>
               {category ? (
-                <Link to="/cart" className="nav-link active active_item">
+                <Link to="/admin/category" className="nav-link active active_item">
                   <i className="bi bi-grid m-1 mx-2" />
                   Categories
                 </Link>
               ) : (
-                <Link to="/" className="nav-link link-dark">
+                <Link to="/admin/category" className="nav-link link-dark">
                   <i className="bi bi-grid m-1 mx-2" />
                   Categories
                 </Link>
@@ -73,12 +73,12 @@ const Admin = ({ category, product, users, order }) => {
               {users ? (
                 <Link to="#" className="nav-link active active_item">
                   <i className="bi bi-person-circle m-1 mx-2" />
-                  users
+                  Users
                 </Link>
               ) : (
                 <Link to="#" className="nav-link link-dark">
                   <i className="bi bi-person-circle m-1 mx-2" />
-                  users
+                  Users
                 </Link>
               )}
             </li>

@@ -5,6 +5,8 @@ import Data from './Components/hooks/Data'
 import Datafetch from './Components/hooks/Datafetch'
 import Main from './Components/hooks/reducer/Main'
 import About from './Components/Pages/About'
+import AddNewCategory from './Components/Pages/AddCategory'
+import AdminCategory from './Components/Pages/AdminCategory'
 import AdminPaage from './Components/Pages/AdminPaage'
 import Cart from './Components/Pages/Cart'
 import EmailConfirmation from './Components/Pages/EmailConfirmation'
@@ -25,7 +27,10 @@ const MyRoutes = () => {
             <Route path='/about' element={<About/>}/>
             <Route path='/register' element={<Register/>}/>
             <Route path='/login' element={<Login/>}/>
+
             <Route path='/admin/dashboard' element={<AdminPaage/>}/>
+            <Route path='/admin/category' element={<AdminCategory/>}/>
+            <Route path='/admin/category/add' element={<AddNewCategory/>}/>
             
 
             <Route path='/verifyEmail/:token' element={<EmailConfirmation/>}/>
