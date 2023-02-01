@@ -16,6 +16,7 @@ import Home from './Components/Pages/Home'
 import Login from './Components/Pages/Login'
 import Register from './Components/Pages/Register'
 import ResetPasword from './Components/Pages/ResetPassword'
+import UpdateCategory from './Components/Pages/UpdateCategory'
 
 const MyRoutes = () => {
   return (
@@ -31,6 +32,7 @@ const MyRoutes = () => {
             <Route path='/admin/dashboard' element={<AdminPaage/>}/>
             <Route path='/admin/category' element={<AdminCategory/>}/>
             <Route path='/admin/category/add' element={<AddNewCategory/>}/>
+            <Route path='/admin/category/update/:id' element={<UpdateCategory/>}/>
             
 
             <Route path='/verifyEmail/:token' element={<EmailConfirmation/>}/>

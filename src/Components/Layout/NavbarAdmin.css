@@ -1,0 +1,12 @@
+*{
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.banner{
+    background-color: rgb(46, 75, 66);
+}
+
+.banner h1{
+    color: white;
+}

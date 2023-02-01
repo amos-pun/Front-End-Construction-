@@ -1,30 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../Layout/Footer";
 import Admin from "../Layout/Admin";
+import { Link, useParams } from "react-router-dom";
+import { getCategoryDetails, updateCategory } from "../../api/categoryAPI";
 import { isAuthenticated } from "../../api/userAPi";
-import { addCategory } from "../../api/categoryAPI";
-import { Link } from "react-router-dom";
 import NavbarAdmin from "../Layout/NavbarAdmin";
 
-const AddNewCategory = () => {
+const UpdateCategory = () => {
 
   let [category_name, setCategoryName] = useState("");
   let { token } = isAuthenticated()
   let [ error, setError ] = useState('')
   let [ success, setSuccess ] = useState(false)
+
+  let {id} = useParams()
+
+  useEffect(()=>{
+    getCategoryDetails(id).then(data=>setCategoryName(data.category_name))
+},[])
   
   const handleAdd = e => {
     e.preventDefault()
-    addCategory(category_name, token)
+    updateCategory(id, category_name, token )
+    // addCategory(category_name, token)
     .then(data => {
         if(data.error){
             setError(data.error)
-            setSuccess(false)
         }
         else{
             setSuccess(true)
-            setError('')
-            setCategoryName('')
         }
     })
   }
@@ -37,7 +41,7 @@ const AddNewCategory = () => {
 
   const showSuccess = () => {
     if(success){
-        return <div className="alert alert-success">Category Added</div>
+        return <div className="alert alert-success">Category has been Updated</div>
     }
   }
 
@@ -47,11 +51,11 @@ const AddNewCategory = () => {
       <div className="container-fluid">
         <div className="row">
           <div className="col-lg-3">
-            <Admin />
+            <Admin category/>
           </div>
 
           <div className="col-lg-9">
-            <h1>Add New Category</h1>
+            <h1>Update Category</h1>
             {showError()}
             {showSuccess()}
             <form className="p-5 mt-3 shadow-lg">
@@ -67,11 +71,11 @@ const AddNewCategory = () => {
                 <button className="btn btn-warning w-75 mt-3"
                     onClick={handleAdd}
                 >
-                  Add New Category
+                  Update Category
                 </button>
-              </div>
-              <Link to="/admin/category">Go Back</Link>
-            </form>
+                </div>
+                </form>
+                <Link to='/admin/category'>Go Back</Link>
           </div>
         </div>
       </div>
@@ -80,4 +84,4 @@ const AddNewCategory = () => {
   );
 };
 
-export default AddNewCategory;
+export default UpdateCategory;

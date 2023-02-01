@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getAllCategories } from '../../api/categoryAPI'
 import Admin from '../Layout/Admin'
-import Navbar from '../Layout/Navbar'
+import NavbarAdmin from '../Layout/NavbarAdmin'
 
 const AdminCategory = () => {
 
@@ -23,7 +23,7 @@ const AdminCategory = () => {
     
   return (
     <div>
-    <Navbar />
+    <NavbarAdmin />
     <div className='container-fluid'>
     <div className='row'>
         <div className='col-lg-3'>
@@ -49,9 +49,9 @@ const AdminCategory = () => {
                                     <td>{category.category_name}</td>
                                     <td>
                                         <div className='btn-group'>
-                                            <button className='btn btn-warning px-3'>
+                                            <Link to={`/admin/category/update/${category._id}`} className='btn btn-warning px-3'>
                                                 <i className="bi bi-gear-fill"></i>&nbsp;&nbsp;Update
-                                            </button> &nbsp;&nbsp;
+                                            </Link> &nbsp;&nbsp;
                                             <button className='btn btn-danger px-3'>
                                                 <i className="bi bi-trash3-fill"></i>&nbsp;&nbsp;Delete
                                             </button>

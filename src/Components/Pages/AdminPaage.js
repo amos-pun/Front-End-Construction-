@@ -1,12 +1,12 @@
 import React from 'react'
 import Footer from '../Layout/Footer'
-import Navbar from '../Layout/Navbar'
 import Admin from '../Layout/Admin'
+import NavbarAdmin from '../Layout/NavbarAdmin'
 
 const AdminPaage = () => {
   return (
     <div>
-        <Navbar />
+    <NavbarAdmin />
         <div className='container-fluid'>
             <div className='row'>
                 <div className='col-lg-3'>

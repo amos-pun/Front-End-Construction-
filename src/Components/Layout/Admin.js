@@ -58,12 +58,12 @@ const Admin = ({ category, product, users, order }) => {
             <li>
               {order ? (
                 <Link to="#" className="nav-link active_item active">
-                  <i class="bi bi-bag-plus-fill m-1 mx-2"></i>
+                  <i className="bi bi-bag-plus-fill m-1 mx-2"></i>
                   Orders
                 </Link>
               ) : (
                 <Link to="#" className="nav-link link-dark">
-                  <i class="bi bi-bag-plus-fill m-1 mx-2"></i>
+                  <i className="bi bi-bag-plus-fill m-1 mx-2"></i>
                   Orders
                 </Link>
               )}
