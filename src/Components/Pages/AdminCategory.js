@@ -26,14 +26,16 @@ const AdminCategory = () => {
     <NavbarAdmin />
     <div className='container-fluid'>
     <div className='row'>
+        <div className='col-lg-1'></div>
+
         <div className='col-lg-3'>
             <Admin category />
         </div>
 
-        <div className='col-lg-9 p-2'>
+        <div className='col-lg-7 p-2'>
             <h1>Categories</h1>
             <div className='text-center'>
-                <table className='table w-75  table-hover table-bordered align-middle px-5'>
+                <table className='table w-100  table-hover table-bordered align-middle'>
                     <thead>
                         <tr className='fw-bold fs-5 bg-info-subtle'>
                             <th>S.no.</th>
@@ -65,6 +67,8 @@ const AdminCategory = () => {
                 <Link to='/admin/category/add'>Add New Category</Link>
             </div>
         </div>
+
+        <div className='col-lg-1'></div>
     </div>
 </div>
 

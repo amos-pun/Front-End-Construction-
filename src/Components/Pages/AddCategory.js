@@ -46,11 +46,14 @@ const AddNewCategory = () => {
       <NavbarAdmin />
       <div className="container-fluid">
         <div className="row">
+
+          <div className="col-lg-1"></div>
+
           <div className="col-lg-3">
             <Admin />
           </div>
 
-          <div className="col-lg-9">
+          <div className="col-lg-7">
             <h1>Add New Category</h1>
             {showError()}
             {showSuccess()}
@@ -73,6 +76,9 @@ const AddNewCategory = () => {
               <Link to="/admin/category">Go Back</Link>
             </form>
           </div>
+
+          <div className="col-lg-1"></div>
+          
         </div>
       </div>
       <Footer />

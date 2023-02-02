@@ -50,11 +50,14 @@ const UpdateCategory = () => {
       <NavbarAdmin />
       <div className="container-fluid">
         <div className="row">
+
+          <div className="col-lg-1"></div>
+
           <div className="col-lg-3">
-            <Admin category/>
+            <Admin />
           </div>
 
-          <div className="col-lg-9">
+          <div className="col-lg-7">
             <h1>Update Category</h1>
             {showError()}
             {showSuccess()}
@@ -77,6 +80,9 @@ const UpdateCategory = () => {
                 </form>
                 <Link to='/admin/category'>Go Back</Link>
           </div>
+
+          <div className="col-lg-1"></div>
+
         </div>
       </div>
       <Footer />

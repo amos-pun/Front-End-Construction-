@@ -5,17 +5,20 @@ import NavbarAdmin from '../Layout/NavbarAdmin'
 
 const AdminPaage = () => {
   return (
-    <div>
+    <div className='bg-danger-subtle'>
     <NavbarAdmin />
         <div className='container-fluid'>
             <div className='row'>
+                <div className='col-lg-1'></div>
                 <div className='col-lg-3'>
                     <Admin />
                 </div>
 
-                <div className='col-lg-9'>
+                <div className='col-lg-7'>
                     <h1>Welcome to Dashboard</h1>
                 </div>
+
+                <div className='col-lg-1'></div>
             </div>
         </div>
         <Footer />
