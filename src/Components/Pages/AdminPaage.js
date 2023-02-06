@@ -5,7 +5,7 @@ import NavbarAdmin from '../Layout/NavbarAdmin'
 
 const AdminPaage = () => {
   return (
-    <div className='bg-danger-subtle'>
+    <div className='bg-light'>
     <NavbarAdmin />
         <div className='container-fluid'>
             <div className='row'>

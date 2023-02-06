@@ -1,8 +1,4 @@
-*{
-    box-sizing: border-box !important;
-}
-
-/* Navbar
+/* Navbar */
 .backNavbar{
     background-color: #82CAAF;
 }
@@ -18,7 +14,7 @@
     font-family: 'Josefin Sans', sans-serif;
     text-transform: uppercase;
     position: absolute;
-    top: 50px;
+    top: 20px !important;
     left: 0px;
 }
 .name{
@@ -35,19 +31,19 @@
 .icon::after{
     content: "";
     /* display: block; */
-    /* background-color: yellow;
+    background-color: yellow;
     height: 0px;
     width: 0%;
     transition: .3s;
     position: absolute;
     top: 20px;
-} */
-/* .icon:hover::after{
+}
+.icon:hover::after{
     width: 100%;
-} */
+}
 
 /* down home navbar  */
-/* .wrapper{
+.wrapper{
     background-color: #cfdcdf ;
     padding: 5px !important;
 }
@@ -67,12 +63,13 @@ nav ul{
     position: relative;
     text-align: center;
     width: 150px !important;
-    color: white !important;
+    color: black !important;
     font-weight: bold;
 }
 .dwnNav:hover{
     color: yellow !important;
-    transition: 0.3s;
+    text-shadow: 1px 0px 5px black !important;
+    transition: 0.1s;
 }
 
 .dwnNav:after{
@@ -85,15 +82,15 @@ nav ul{
     width: 100%;
     height: 2px;
     transition: .5s;
-    background-color: white !important;
+    background-color: black !important;
 }
 
 .dwnNav:hover:after{
     transform: translateX(-50%) scaleX(1);
-} */
+}
 
 
-/* @media screen and (max-width:412px) {
+@media screen and (max-width:412px) {
     .home1 div{
         text-align: center;
         line-height: 20px;
@@ -101,34 +98,4 @@ nav ul{
     .home1 div:nth-child(even){
         background-color: lightgrey ;
     }
-} */ */
-
-  /* -- Cart  */
-/* .imgHover:hover{
-    transform: scale(1.2);
-    border: 1px solid black;
-} */
-
-/*  -- Admin Dashboard -- */
-.admin_dash{
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-shadow: 0px 2px 3px white, 0px 0px 2px yellow;
-}
-
-.nav li:hover{
-    background-color: white;
-    /* font-weight: bold; */
-    transform: scaleX(1.1);
-    transition: 0.1s;
-}
-.active_item{
-    background-color: white !important;
-    color: #000000 !important;
-    /* font-weight: bold; */
-    transform: scaleX(1.1) !important;
-    margin: 0px 10px !important;
-    transition: 0.1s;
-}
-.admin_board{
-    background-color: #82CAAF;
 }

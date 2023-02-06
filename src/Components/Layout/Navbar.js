@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { isAuthenticated, signout } from "../../api/userAPi";
+import './Navbar.js.css'
 
 const Navbar = () => {
   let { user } = isAuthenticated();

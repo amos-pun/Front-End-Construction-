@@ -6,8 +6,10 @@ import Datafetch from './Components/hooks/Datafetch'
 import Main from './Components/hooks/reducer/Main'
 import About from './Components/Pages/About'
 import AddNewCategory from './Components/Pages/AddCategory'
+import AddProduct from './Components/Pages/addProduct'
 import AdminCategory from './Components/Pages/AdminCategory'
 import AdminPaage from './Components/Pages/AdminPaage'
+import AdminProducts from './Components/Pages/AdminProduct'
 import Cart from './Components/Pages/Cart'
 import EmailConfirmation from './Components/Pages/EmailConfirmation'
 import FAQ from './Components/Pages/FAQ'
@@ -33,7 +35,9 @@ const MyRoutes = () => {
             <Route path='/admin/category' element={<AdminCategory/>}/>
             <Route path='/admin/category/add' element={<AddNewCategory/>}/>
             <Route path='/admin/category/update/:id' element={<UpdateCategory/>}/>
-            
+
+            <Route path='/admin/product' element={<AdminProducts/>}/>
+            <Route path='/admin/product/add' element={<AddProduct/>}/>
 
             <Route path='/verifyEmail/:token' element={<EmailConfirmation/>}/>
 

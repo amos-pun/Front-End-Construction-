@@ -24,7 +24,7 @@ const NavbarAdmin = () => {
           <div className="col-lg-3 d-flex flex-start mt-0">
             <Link className="navbar-brand textNav" to="/">
               <span className="name">Nirman</span> <br />
-              <span className="company">Construction Company</span>
+              <span className="com">Construction Company</span>
             </Link>
           </div>
 

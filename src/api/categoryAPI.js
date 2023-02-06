@@ -40,3 +40,16 @@ export const updateCategory = (id, category_name, token ) => {
     .then(res => res.json())
     .catch(err => console.log(err))
 }
+
+// to delete category
+export const deleteCategory = (id, token) => {
+    return fetch(`${API}/deletecategory/${id}`,{
+        method : "DELETE",
+        headers : {
+            "Content-Type":"application/json",
+            Authorization : `Bearer ${token}`
+        }
+    })
+    .then(res=>res.json())
+    .catch(err => console.log(err))
+}

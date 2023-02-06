@@ -1,12 +1,20 @@
 *{
-    margin: 0 !important;
     box-sizing: border-box !important;
 }
 
 .banner{
-    background-color: rgb(46, 75, 66);
+    background-color:#82CAAF !important;
 }
 
 .banner h1{
     color: white;
 }
+.com{
+    font-size: 12px !important;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+}
+

@@ -43,12 +43,12 @@ const Admin = ({ category, product, users, order }) => {
 
             <li>
               {product ? (
-                <Link to="/cart" className="nav-link active active_item">
+                <Link to="/admin/product" className="nav-link active active_item">
                   <i className="bi bi-grid m-1 mx-2" />
                   Products
                 </Link>
               ) : (
-                <Link to="/cart" className="nav-link link-dark">
+                <Link to="/admin/product" className="nav-link link-dark">
                   <i className="bi bi-grid m-1 mx-2" />
                   Products
                 </Link>

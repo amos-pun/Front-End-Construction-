@@ -28,7 +28,7 @@ const Carousel = () => {
         </div>
         <div className="carousel-inner">
             <div className="carousel-item active">
-                <img src="./Image/Road.jpg" className="d-block w-75 m-auto" style={{height:'630px'}} alt="pic" />
+                <img src="./Image/Canaan.jpg" className="d-block w-75 m-auto" style={{height:'630px'}} alt="pic" />
                 <div className="carousel-caption d-none d-md-block">
                 <h5>Thali, Kathmandu</h5>
                 <p>
