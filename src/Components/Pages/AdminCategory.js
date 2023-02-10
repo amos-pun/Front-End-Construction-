@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { deleteCategory, getAllCategories } from "../../api/categoryAPI";
-import Admin from "../Layout/Admin";
+import Admin from "../Layout/SideBar";
 import NavbarAdmin from "../Layout/NavbarAdmin";
 import swal from "sweetalert";
 import { isAuthenticated } from "../../api/userAPi";
@@ -36,7 +36,8 @@ const AdminCategory = () => {
           break;
 
         case "Delete":
-          deleteCategory(id, token).then((data) => {
+          deleteCategory(id, token)
+          .then((data) => {
             if (data.error) {
               swal("Error!", data.error, "error");
             } else {

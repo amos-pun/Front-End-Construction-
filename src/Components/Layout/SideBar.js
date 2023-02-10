@@ -2,8 +2,9 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { isAuthenticated } from "../../api/userAPi";
 import { signout } from "../../api/userAPi";
+import Profile from './zoom.jpg'
 
-const Admin = ({ category, product, users, order }) => {
+const SideBar = ({ category, product, users, order }) => {
   const { user } = isAuthenticated();
   const navigate = useNavigate();
 
@@ -57,12 +58,12 @@ const Admin = ({ category, product, users, order }) => {
 
             <li>
               {order ? (
-                <Link to="#" className="nav-link active_item active">
+                <Link to="/admin/orders" className="nav-link active_item active">
                   <i className="bi bi-bag-plus-fill m-1 mx-2"></i>
                   Orders
                 </Link>
               ) : (
-                <Link to="#" className="nav-link link-dark">
+                <Link to="/admin/orders" className="nav-link link-dark">
                   <i className="bi bi-bag-plus-fill m-1 mx-2"></i>
                   Orders
                 </Link>
@@ -71,12 +72,12 @@ const Admin = ({ category, product, users, order }) => {
 
             <li>
               {users ? (
-                <Link to="#" className="nav-link active active_item">
+                <Link to="/admin/users" className="nav-link active active_item">
                   <i className="bi bi-person-circle m-1 mx-2" />
                   Users
                 </Link>
               ) : (
-                <Link to="#" className="nav-link link-dark">
+                <Link to="/admin/users" className="nav-link link-dark">
                   <i className="bi bi-person-circle m-1 mx-2" />
                   Users
                 </Link>
@@ -93,8 +94,8 @@ const Admin = ({ category, product, users, order }) => {
               aria-expanded="false"
             >
               <img
-                src="../Image/zoom.jpg"
-                alt=""
+                src={Profile}
+                alt="..img.."
                 width="48"
                 height="52"
                 className="rounded-circle me-2"
@@ -121,4 +122,4 @@ const Admin = ({ category, product, users, order }) => {
   );
 };
 
-export default Admin;
+export default SideBar;

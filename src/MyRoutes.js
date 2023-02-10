@@ -7,6 +7,9 @@ import Main from './Components/hooks/reducer/Main'
 import About from './Components/Pages/About'
 import AddNewCategory from './Components/Pages/AddCategory'
 import AddProduct from './Components/Pages/addProduct'
+import AdminOrders from './Components/Pages/Admin/AdminOrders'
+import AdminUsers from './Components/Pages/Admin/AdminUsers'
+import UpdateProduct from './Components/Pages/Admin/UpdateProduct'
 import AdminCategory from './Components/Pages/AdminCategory'
 import AdminPaage from './Components/Pages/AdminPaage'
 import AdminProducts from './Components/Pages/AdminProduct'
@@ -38,10 +41,13 @@ const MyRoutes = () => {
 
             <Route path='/admin/product' element={<AdminProducts/>}/>
             <Route path='/admin/product/add' element={<AddProduct/>}/>
+            <Route path='/admin/product/update/:id' element={<UpdateProduct/>}/>
+
+            <Route path="/admin/users" element={<AdminUsers/>}/>
+
+            <Route path='/admin/orders' element={<AdminOrders/>}/>
 
             <Route path='/verifyEmail/:token' element={<EmailConfirmation/>}/>
-
-            
             <Route path='/resetpassword/:token' element={<ResetPasword/>}/>
             <Route path='/forgetpassword' element={<ForgetPassword/>}/>
             

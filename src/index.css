@@ -132,3 +132,8 @@ nav ul{
 .admin_board{
     background-color: #82CAAF;
 }
+
+/*  -- -- Admin Product -- --  */
+.img{
+    width: 100px !important;
+}

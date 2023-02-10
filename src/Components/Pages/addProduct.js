@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Footer from "../Layout/Footer";
-import Admin from "../Layout/Admin";
+import Admin from "../Layout/SideBar";
 import NavbarAdmin from "../Layout/NavbarAdmin";
 import { isAuthenticated } from "../../api/userAPi";
 import { getAllCategories } from "../../api/categoryAPI";
 import { addproducts } from "../../api/praductApi";
+import { Link } from "react-router-dom";
 
 const AddProduct = () => {
     const [ categories, setCategories ] = useState ([])
@@ -19,6 +20,11 @@ const AddProduct = () => {
     success: false,
     formdata: ""
   });
+
+
+  // useRef() is used to refresh the value
+  let sel_ref = useRef()
+  let file_ref = useRef()
 
   const{token} = isAuthenticated()
 
@@ -61,6 +67,8 @@ const AddProduct = () => {
         else{
             setProduct({success:true, product_name: '', product_price: '', product_description: '',
             count_in_stock:'', formdata: new FormData , error: ''})
+            sel_ref.current.value = ''
+            file_ref.current.value = ''
         }
     })
   }
@@ -73,7 +81,9 @@ const AddProduct = () => {
 
   const showSuccess = () => {
     if(success){
-        return <div className="alert alert-success">Product Added Successfully.</div>
+        return <div className="alert alert-success">Product Added Successfully.
+          <Link to='/admin/product'>Go Back</Link>
+        </div>
     }
   }
 
@@ -131,11 +141,13 @@ const AddProduct = () => {
                 className="form-control mb-1"
                 id="image"
                 onChange={handleChange('product_image')} 
+                ref={file_ref}
               ></input>
 
               <label htmlFor="category">Category</label>
               <select id="category" className="form-control mb-1"
               onChange={handleChange('category')}
+              ref={sel_ref}
               >
                 <option>Select Category</option>
                 {

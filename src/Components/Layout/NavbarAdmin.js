@@ -94,7 +94,7 @@ const NavbarAdmin = () => {
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-1"></div>
-            <div className="wrapper col-lg-10 bg-success">
+            <div className="wrapper col-lg-10 bg-warning">
               <nav>
                 <ul>
                   <Link className="dwnNav">Civil Design</Link>

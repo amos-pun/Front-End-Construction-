@@ -24,7 +24,6 @@ const Login = () => {
       else{
         authenticate(data)
         setSuccess(true)
-        toast.success('Welcome')
       } 
     })
   }
@@ -43,6 +42,7 @@ const Login = () => {
     if(success){
        if(isAuthenticated() &&  isAuthenticated().user.role===0){
         navigate('/')
+        // navigate vaneyko find this ('/') naatra navigate or find ( khooj ) another one.
       }
       else{
         navigate('/admin/dashboard')
@@ -99,7 +99,6 @@ const Login = () => {
             </div>
             <button className="w-50 btn btn-lg btn-primary" 
                 onClick={handleLogin}
-                  // notify()
                 type="submit">
                 Login
             </button>

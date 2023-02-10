@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from '../Layout/Footer'
-import Admin from '../Layout/Admin'
 import NavbarAdmin from '../Layout/NavbarAdmin'
+import SideBar from '../Layout/SideBar'
 
 const AdminPaage = () => {
   return (
@@ -11,7 +11,7 @@ const AdminPaage = () => {
             <div className='row'>
                 <div className='col-lg-1'></div>
                 <div className='col-lg-3'>
-                    <Admin />
+                    <SideBar />
                 </div>
 
                 <div className='col-lg-7'>

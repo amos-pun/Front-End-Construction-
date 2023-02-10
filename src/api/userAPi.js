@@ -80,3 +80,10 @@ export const signout = () => {
     .then(res => res.json())
     .catch(err =>console.log(err))
 }
+
+// to get all users
+export const getAllUsers = () => {
+    return fetch(`${API}/userslist`)
+    .then(res => res.json())
+    .catch(err => console.log(err))
+}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../Layout/Footer";
-import Admin from "../Layout/Admin";
+import Admin from "../Layout/SideBar";
 import { Link, useParams } from "react-router-dom";
 import { getCategoryDetails, updateCategory } from "../../api/categoryAPI";
 import { isAuthenticated } from "../../api/userAPi";

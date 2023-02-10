@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import Footer from '../Layout/Footer'
-import Admin from '../Layout/Admin'
+import Admin from '../Layout/SideBar'
 import NavbarAdmin from '../Layout/NavbarAdmin'
 import { API } from '../../config'
-import { getAllProducts } from '../../api/praductApi'
+import { deleteProduct, getAllProducts } from '../../api/praductApi'
 import { Link } from 'react-router-dom'
+import swal from 'sweetalert'
+import { isAuthenticated } from '../../api/userAPi'
 
 const AdminProducts = () => {
 
     const [ products, setProducts ] = useState("")
+    const { token } = isAuthenticated()
+    const [ success, setSuccess ] = useState(false)
 
     useEffect(()=>{
         getAllProducts()
@@ -19,7 +23,41 @@ const AdminProducts = () => {
                 setProducts(data)
             }
         })
-    },[])
+    },[success])
+
+    const handleDelete = id => e => {
+        e.preventDefault()
+        setSuccess(false)
+        swal("Delete Product", "Are you sure you want to delete",{
+            buttons:{
+                Cancel : "Cancel",
+                Delete : "Delete",
+            },
+            icon: "info",
+        })
+        .then((value) => {
+            switch (value) {
+                case "Cancel" :
+                    swal("Canceled!", "Delete Canceled", "warning")
+                    break;
+
+                case "Delete":
+                    deleteProduct(id, token)
+                    .then((data) => {
+                        if(data.error) {
+                            swal("Error!",data.error, "error")
+                        } else {
+                            setSuccess(true)
+                            swal("Success!", data.message, "success")
+                        }
+                    })
+                    break;
+                    default:
+                        swal('something went wrong!');
+
+            }
+        })
+    }
     
   return (
     <div className='bg-light'>
@@ -50,16 +88,21 @@ const AdminProducts = () => {
                                 products && products.map((product,i) => {
                                     return<tr key={product._id}>
                                         <td>{i+1}</td>
-                                        <td>
-                                            <img src={`${API}/${product.product_image}`} alt={product.product_image} style={{height:"100px"}}/>
+                                        <td >
+                                            <img src={`${API}/${product.product_image}`} alt={product.product_image} style={{width:"100px",height:"100px"}} />
                                         </td>
                                         <td>{product.product_name}</td>
                                         <td>{product.count_in_stock}</td>
                                         <td>{product.product_price}</td>
-                                        <div className='btn-group'>
-                                            <button className='btn btn-warning'>Update</button>
-                                            <button className='btn btn-danger'>Remove</button>
-                                        </div>
+                                        <td>
+                                            <div className='btn-group'>
+                                                <Link to={`/admin/product/update/${product._id}`} className='btn btn-warning'>Update</Link>
+                                                <button 
+                                                    className='btn btn-danger'
+                                                    onClick={handleDelete(product._id)}
+                                                    >Remove</button>
+                                            </div>
+                                        </td>
                                     </tr>
                                 })
                             }
