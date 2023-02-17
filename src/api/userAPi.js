@@ -17,7 +17,7 @@ export const userRgister = (username, email, password) => {
 export const emailConfirmation =  (token) => {
    return fetch(`${API}/verifyEmail/${token}`,{
     method:"GET",
-    heders: {
+    headers: {
         "Content-Type":"application/json"
     }
    })
@@ -84,6 +84,58 @@ export const signout = () => {
 // to get all users
 export const getAllUsers = () => {
     return fetch(`${API}/userslist`)
+    .then(res => res.json())
+    .catch(err => console.log(err))
+}
+
+// to update user
+// export const updateUser = () => {
+//     return fetch(`${API}/updateuser/:id`,{
+//         method : "PUT",
+//         headers : {
+//             "Content-Type":"application/json"
+            
+//         }
+//     })
+// }
+
+// to updateRole - Admin
+export const updateRoles = (id, user, token) => {
+    return fetch(`${API}/updaterole/${id}`,{
+        method : "PUT",
+        headers : {
+            Authorization : `Bearer ${token}`
+        },
+        body: user
+    })
+    .then(res=>res.json())
+    .catch(err=>console.log(err))
+}
+
+//to updateRole - User
+export const updateRoleUser = (id, user, token) => {
+    return fetch(`${API}/updateroleuser/${id}`,{
+        method : "PUT",
+        headers : {
+            Authorization : `Bearer ${token}`
+        },
+        body: user
+    })
+    .then(res=>res.json())
+    .catch(err=>console.log(err))
+}
+
+
+
+// to delete the user
+export const deleteUser = ( id , token ) => {
+    return fetch(`${API}/removeuser/${id}`,{
+        method : "DELETE",
+        headers : {
+            "Content-Type":"application/json",
+            Authorization : `Bearer ${token}`
+        }
+    })
     .then(res => res.json())
     .catch(err => console.log(err))
 }

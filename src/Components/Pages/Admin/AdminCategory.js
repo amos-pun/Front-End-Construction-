@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { deleteCategory, getAllCategories } from "../../api/categoryAPI";
-import Admin from "../Layout/SideBar";
-import NavbarAdmin from "../Layout/NavbarAdmin";
+import { deleteCategory, getAllCategories } from "../../../api/categoryAPI";
+import Admin from "../../Layout/SideBar";
+import NavbarAdmin from "../../Layout/NavbarAdmin";
 import swal from "sweetalert";
-import { isAuthenticated } from "../../api/userAPi";
+import { isAuthenticated } from "../../../api/userAPi";
 
 const AdminCategory = () => {
   const [categories, setCategories] = useState([]);

@@ -25,6 +25,7 @@ export const productDetail = id => {
     .catch(err=>console.log(err))
 }
 
+// to update product
 export const updateProduct =  (id, product, token) => {
     return fetch(`${API}/updateproduct/${id}`,{
         method: "PUT",
@@ -45,6 +46,19 @@ export const deleteProduct = ( id, token ) => {
             "Content-Type":"application/json",
             Authorization : `Bearer ${token}`            
         }
+    })
+    .then(res => res.json())
+    .catch(err => console.log(err))
+}
+
+// to 
+export const getFilteredProducts = (filters, sortBy, order, limit) => {
+    return fetch(`${API}/getfilteredproducts?sortBy=${sortBy}&order=${order}&limit=${limit}`,{
+        method: "POST",
+        headers: {
+            "Content-Type":"application/json",
+        },
+        body:JSON.stringify(filters)
     })
     .then(res => res.json())
     .catch(err => console.log(err))

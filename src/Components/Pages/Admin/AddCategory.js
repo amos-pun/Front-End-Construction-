@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Footer from "../Layout/Footer";
-import Admin from "../Layout/SideBar";
-import { isAuthenticated } from "../../api/userAPi";
-import { addCategory } from "../../api/categoryAPI";
+import Footer from "../../Layout/Footer";
+import Admin from "../../Layout/SideBar";
+import { isAuthenticated } from "../../../api/userAPi";
+import { addCategory } from "../../../api/categoryAPI";
 import { Link } from "react-router-dom";
-import NavbarAdmin from "../Layout/NavbarAdmin";
+import NavbarAdmin from "../../Layout/NavbarAdmin";
 
 const AddNewCategory = () => {
 

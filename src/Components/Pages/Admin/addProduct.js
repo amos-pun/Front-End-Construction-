@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import Footer from "../Layout/Footer";
-import Admin from "../Layout/SideBar";
-import NavbarAdmin from "../Layout/NavbarAdmin";
-import { isAuthenticated } from "../../api/userAPi";
-import { getAllCategories } from "../../api/categoryAPI";
-import { addproducts } from "../../api/praductApi";
+import Footer from "../../Layout/Footer";
+import Admin from "../../Layout/SideBar";
+import NavbarAdmin from "../../Layout/NavbarAdmin";
+import { isAuthenticated } from "../../../api/userAPi";
+import { getAllCategories } from "../../../api/categoryAPI";
+import { addproducts } from "../../../api/praductApi";
 import { Link } from "react-router-dom";
 
 const AddProduct = () => {

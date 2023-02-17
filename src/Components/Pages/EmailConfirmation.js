@@ -33,14 +33,14 @@ const EmailConfirmation = () => {
     const showError = () => {
         if(error){
             return <div className='alert alert-success'>{error}
-            <Link to='/signin'>Login</Link>
+            <Link to='/login'>Login</Link>
             </div>
         }
     }
     const showSuccess = () => {
         if(success){
             return <div className='alert alert-success'>{success}
-            <Link to='/signin'>Log in</Link>
+            <Link to='/login'>Log in</Link>
             </div>
         }
     }

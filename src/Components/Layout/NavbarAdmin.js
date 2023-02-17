@@ -47,13 +47,14 @@ const NavbarAdmin = () => {
                   </div>
                 </div>
               )}
+              
               {user && user.role === 0 && (
                 <div className="d-flex justify-content-evenly p-2">
                   <Link to="/user/profile">
                     <i className="bi bi-person-circle text-white fs-3 px-4 icon"></i>
                   </Link>
 
-                  <Link to={"/cart"}>
+                  <Link to={"/products"}>
                     <i className="bi bi-cart fs-3 px-4 icon"></i>
                   </Link>
 
@@ -69,6 +70,7 @@ const NavbarAdmin = () => {
               )}
 
               {user && user.role === 1 && (
+                
                 <div className="d-flex mt-3 justify-content-evenly ">
                   <Link to="/admin/dashboard">
                     <i className="bi bi-speedometer text-white fs-3 px-4 icon"></i>

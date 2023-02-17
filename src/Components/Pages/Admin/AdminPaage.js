@@ -1,7 +1,7 @@
 import React from 'react'
-import Footer from '../Layout/Footer'
-import NavbarAdmin from '../Layout/NavbarAdmin'
-import SideBar from '../Layout/SideBar'
+import Footer from '../../Layout/Footer'
+import NavbarAdmin from '../../Layout/NavbarAdmin'
+import SideBar from '../../Layout/SideBar'
 
 const AdminPaage = () => {
   return (

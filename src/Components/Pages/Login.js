@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {  authenticate, isAuthenticated, login } from '../../api/userAPi'
 import Navbar from '../Layout/Navbar'
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // import 'react-toastify/dist/ReactToastify.css';
 // import { toast, ToastContainer } from 'react-toastify';
@@ -54,7 +53,6 @@ const Login = () => {
   return (
     <div>
     <Navbar/>
-    <ToastContainer position='top-right'></ToastContainer>
     {showError()}
     {redirect()}
       <div className="text-center">

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import Footer from '../Layout/Footer'
-import Admin from '../Layout/SideBar'
-import NavbarAdmin from '../Layout/NavbarAdmin'
-import { API } from '../../config'
-import { deleteProduct, getAllProducts } from '../../api/praductApi'
+import Footer from '../../Layout/Footer'
+import Admin from '../../Layout/SideBar'
+import NavbarAdmin from '../../Layout/NavbarAdmin'
+import { API } from '../../../config'
+import { deleteProduct, getAllProducts } from '../../../api/praductApi'
 import { Link } from 'react-router-dom'
 import swal from 'sweetalert'
-import { isAuthenticated } from '../../api/userAPi'
+import { isAuthenticated } from '../../../api/userAPi'
 
 const AdminProducts = () => {
 

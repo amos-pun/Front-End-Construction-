@@ -100,7 +100,7 @@ const Navbar = () => {
           <ul>
               <Link className="dwnNav">Civil Design</Link>
 
-              <Link to="/cart" className="dwnNav">
+              <Link to="/products" className="dwnNav">
                 Products
               </Link>
 
