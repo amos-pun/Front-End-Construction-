@@ -21,8 +21,7 @@ function App() {
   
   return (
     <Provider store={store}>
-      
-      <MyRoutes/>
+        <MyRoutes/>
     </Provider>
   )
 }

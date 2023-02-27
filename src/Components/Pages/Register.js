@@ -34,7 +34,7 @@ const Register = () => {
 
     const showSuccess = () => {
             if(success){
-                return <div className='alert alert-sucess'>User Registered Sucessfully. Check email for verification.</div>
+                return <div className='alert alert-success'>User Registered Sucessfully. Check email for verification.</div>
             }
         }
 

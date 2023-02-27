@@ -1,7 +1,8 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { isAuthenticated, signout } from "../../api/userAPi";
-import './Navbar.js.css'
+import "./Navbar.js.css";
 
 const Navbar = () => {
   let { user } = isAuthenticated();
@@ -13,6 +14,9 @@ const Navbar = () => {
       navigate("/");
     });
   };
+
+  const cart_items = useSelector(state => state.cart.cart_items);
+  const cart_items_length = cart_items.length;
 
   return (
     <div>
@@ -44,9 +48,9 @@ const Navbar = () => {
             {!user && (
               <div className="d-flex justify-content-evenly">
                 <div className="p-3">
-                    <Link to={"/login"}>
-                      <i className="bi bi-google-play fs-4 icon"></i>
-                    </Link>
+                  <Link to={"/login"}>
+                    <i className="bi bi-google-play fs-4 icon"></i>
+                  </Link>
                 </div>
 
                 <div className="p-2">
@@ -62,8 +66,14 @@ const Navbar = () => {
                   <i className="bi bi-person-circle text-white fs-3 icon"></i>
                 </Link>
 
-                <Link to={"/cart"}>
-                  <i className="bi bi-cart fs-3 icon"></i>
+                <Link to='/cart' className="position-relative">
+                  <i className="bi bi-cart fs-3 icon position-relative"></i>
+                  {
+                    cart_items_length > 0 && 
+                    <span className="position-absolute top-25 start-100 translate-middle badge rounded-pill bg-danger"> {cart_items_length}
+                      <span className="visually-hidden">unread messages</span>
+                    </span>
+                  }
                 </Link>
 
                 {user && (
@@ -84,11 +94,11 @@ const Navbar = () => {
                 </Link>
 
                 <span role="button">
-                    <i
-                      className="bi bi-box-arrow-right text-white fs-3 icon"
-                      onClick={handleSignout}
-                    ></i>
-                  </span>
+                  <i
+                    className="bi bi-box-arrow-right text-white fs-3 icon"
+                    onClick={handleSignout}
+                  ></i>
+                </span>
               </div>
             )}
           </div>
@@ -98,20 +108,19 @@ const Navbar = () => {
       <div className="wrapper col-lg-12">
         <nav>
           <ul>
-              <Link className="dwnNav">Civil Design</Link>
+            <Link className="dwnNav">Civil Design</Link>
 
-              <Link to="/products" className="dwnNav">
-                Products
-              </Link>
+            <Link to="/products" className="dwnNav">
+              Products
+            </Link>
 
-              <Link to="/faq" className="dwnNav">
-                FAQ
-              </Link>
+            <Link to="/faq" className="dwnNav">
+              FAQ
+            </Link>
 
-              <Link to="/about" className="dwnNav">
-                About
-              </Link>
-              
+            <Link to="/about" className="dwnNav">
+              About
+            </Link>
           </ul>
         </nav>
       </div>

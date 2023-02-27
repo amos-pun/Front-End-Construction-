@@ -25,6 +25,7 @@ import UpdateCategory from "./Components/Pages/UpdateCategory";
 import AdminRoutes from "./SelectiveRoutes/AdminRoutes";
 import PublicRoutes from "./SelectiveRoutes/PublicRoutes";
 import Products from "./Components/Pages/Products/Products";
+import ProductDetails from "./Components/Pages/Products/ProductDetails";
 
 const MyRoutes = () => {
   return (
@@ -56,12 +57,12 @@ const MyRoutes = () => {
           <Route path="/admin/orders" element={<AdminOrders />} />
         </Route>
 
-
         <Route path="/" element={<PublicRoutes />}>
           <Route path="/cart" element={<Cart />} />
-          <Route path="/products" element={<Products/>}/>
+          <Route path="/product/:id" element={<ProductDetails />} />
         </Route>
 
+        <Route path="/products" element={<Products />} />
         <Route path="/verifyEmail/:token" element={<EmailConfirmation />} />
         <Route path="/resetpassword/:token" element={<ResetPasword />} />
         <Route path="/forgetpassword" element={<ForgetPassword />} />

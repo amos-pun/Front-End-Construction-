@@ -8,20 +8,18 @@ const ForgetPassword = () => {
   let [error, setError] = useState("");
 
   const handleSubmit = (e) => {
-    e
-      .preventDefault()
-      forgetPassword(email)
-      .then((data) => {
-        if (data.error) {
-          setError(data.error);
-          setSuccess("");
-        } else {
-          setSuccess(data.message);
-          setError("");
-        }
-      })
-    }
-  
+    e.preventDefault();
+    forgetPassword(email)
+    .then((data) => {
+      if (data.error) {
+        setError(data.error);
+        setSuccess("");
+      } else {
+        setSuccess(data.message);
+        setError("");
+      }
+    });
+  };
 
   const showError = () => {
     if (error) {
@@ -54,7 +52,6 @@ const ForgetPassword = () => {
         <button className="btn btn-warning w-50 mt-3" onClick={handleSubmit}>
           Forget Password
         </button>
-
       </div>
     </div>
   );

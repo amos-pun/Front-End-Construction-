@@ -15,7 +15,7 @@ const EmailConfirmation = () => {
 
     // consol.log(token)
 
-    // { token } = useParams()
+    // const { token } = useParams()
     // destructuring
 
     useEffect(()=>{
