@@ -1,4 +1,4 @@
-import {API} from "../config";
+import { API } from "../config"
 
 export const userRgister = (username, email, password) => {
     let user = {username, email, password}
